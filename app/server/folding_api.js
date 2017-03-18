@@ -17,9 +17,25 @@ import { Enumeration } from './enumeration'
  * {"error": ""}.
  */
 
-export var search_type = new Enumeration(["exact", "prefix", "like"]);
-export var entity = new Enumeration(["donor", "team"]);
-export var type = new Enumeration(["credit", "wus"]);
+export class search_typeClass extends Enumeration{
+    constructor(){
+        super(["exact", "prefix", "like"]);
+    }
+}
+export class entityClass extends Enumeration{
+    constructor(){
+        super(["donor", "team"]);
+    }
+}
+export class typeClass extends Enumeration{
+    constructor(){
+        super(["credit", "wus"]);
+    }
+}
+
+export var search_type = new search_typeClass();
+export var entity = new entityClass();
+export var type = new typeClass();
 
 /** /api/donors
  * POST/GET params: name, search_type, passkey, team
@@ -43,9 +59,9 @@ export function donorsMonthly(givenParams) {
  * URL params: donor
  * Returns information about a specific donor.
  */
-// export function donor(givenParams) {
-//     return requestData(givenParams, "donor");
-// }
+export function donor(donorName) {
+    return requestData({}, "donor/"+donorName);
+}
 
 /** /api/teams
  * POST/GET params: name, search_type, passkey, team
@@ -69,9 +85,9 @@ export function teamsMonthly(givenParams) {
  * URL params: team
  * Returns information about a specific team including a list of the 1000 highest scoring members.
  */
-// export function team(givenParams) {
-//     return requestData(givenParams, "team");
-// }
+export function team(teamNumber) {
+    return requestData({}, "team/"+teamNumber.toString());
+}
 
 /** /api/awards/:entity/:type/:id
  * URL params: entity, type, id
@@ -82,9 +98,16 @@ export function teamsMonthly(givenParams) {
  * For example:
  * http://folding.stanford.edu/stats/api/awards/donor/credit/anonymous
  */
-// export function awards(givenParams) {
-//     return requestData(givenParams, "teams-monthly");
-// }
+export function awards(givenParams) {
+    if (! givenParams.entity instanceof entityClass)
+        return;
+    if (! givenParams.type instanceof typeClass)
+        return;
+    if (givenParams.id === undefined)
+        return;
+
+    return requestData({}, "awards/"+givenParams.entity.toString()+"/"+givenParams.type.toString()+"/"+givenParams.id.toString());
+}
 
 /** /api/os
  * Returns client statistics and totals by OS and GPU.
@@ -104,12 +127,16 @@ function getDefinedParameters(givenParams){
     }
     return paramsToUse;
 }
+
 function requestData(givenParams, givenPath) {
     var definedParams = getDefinedParameters(givenParams)
     try {
-        var result = HTTP.get("http://folding.stanford.edu/stats/api/"+givenPath,
+        var apiCommnad = "http://folding.stanford.edu/stats/api/"+givenPath;
+        //console.log(apiCommnad);
+        //console.log(definedParams);
+        var result = HTTP.get(apiCommnad,
             {params: definedParams});
-        return result.data;
+        return result;
     } catch (e) {
         // Got a network error, time-out or HTTP error in the 400 or 500 range.
         console.log(e)
