@@ -43,6 +43,7 @@
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/logging/1.1.17/web.browser/logging_cordova.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/logging/1.1.17/web.browser/logging.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/logging/1.1.17/web.browser/logging_test.js" />
+        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/ethereum_web3/0.18.3/web.browser/dist/web3.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/launch-screen/1.1.1/web.browser/mobile-launch-screen.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/launch-screen/1.1.1/web.browser/default-behavior.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/babel-runtime/1.0.1/web.browser/babel-runtime.js" />
@@ -50,6 +51,7 @@
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/blaze-tools/1.0.10/web.browser/preamble.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/jquery/1.11.10/web.browser/jquery.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/blaze-tools/1.0.10/web.browser/tojs.js" />
+        <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/ethereum_web3/0.18.3/web.browser/package-init.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/blaze-tools/1.0.10/web.browser/tokens.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/modules/0.7.9/web.browser/server.js" />
         <item url="file://$USER_HOME$/AppData/Local/.meteor/packages/modules/0.7.9/web.browser/buffer.js" />
@@ -178,6 +180,7 @@
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/logging/1.1.17/web.browser/logging_cordova.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/logging/1.1.17/web.browser/logging.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/logging/1.1.17/web.browser/logging_test.js" />
+      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/ethereum_web3/0.18.3/web.browser/dist/web3.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/launch-screen/1.1.1/web.browser/mobile-launch-screen.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/launch-screen/1.1.1/web.browser/default-behavior.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/babel-runtime/1.0.1/web.browser/babel-runtime.js" />
@@ -185,6 +188,7 @@
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/blaze-tools/1.0.10/web.browser/preamble.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/jquery/1.11.10/web.browser/jquery.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/blaze-tools/1.0.10/web.browser/tojs.js" />
+      <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/ethereum_web3/0.18.3/web.browser/package-init.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/blaze-tools/1.0.10/web.browser/tokens.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/modules/0.7.9/web.browser/server.js" />
       <root url="file://$USER_HOME$/AppData/Local/.meteor/packages/modules/0.7.9/web.browser/buffer.js" />
