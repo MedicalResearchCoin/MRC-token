@@ -1,22 +1,34 @@
-import { Template } from 'meteor/templating';
-import { ReactiveVar } from 'meteor/reactive-var';
 
-import './main.html';
+Session.setDefault('latestBlock', {});
 
-Template.hello.onCreated(function helloOnCreated() {
-  // counter starts at 0
-  this.counter = new ReactiveVar(0);
+
+Template['blockchainStatus'].helpers({
+    currentBlock: function () {
+        return JSON.stringify(Session.get('latestBlock'), null, 2);
+    }
 });
 
-Template.hello.helpers({
-  counter() {
-    return Template.instance().counter.get();
-  },
+
+Template['deposits'].helpers({
+    deposits: function () {
+        return DepositsCollection.find({},{sort: {blockNumber: -1}});
+    },
+    value: function(){
+        return web3.fromWei(this.value, 'ether') + ' ether';
+    }
 });
 
-Template.hello.events({
-  'click button'(event, instance) {
-    // increment the counter when button is clicked
-    instance.counter.set(instance.counter.get() + 1);
-  },
+
+Template['guessNumber'].events({
+    'click button.guess': function (e, template) {
+        alert(template.find('input').value +' is '+ GuessNumberInstance.guessNumber(template.find('input').value));
+        template.find('input').value = '';
+    },
+    'click button.set': function (e, template) {
+        GuessNumberInstance.setNumber(template.find('input').value, {from: web3.eth.accounts[2], gas: 50000});
+        template.find('input').value = '';
+    },
+    'click a.switch': function (e, template) {
+        TemplateVar.set('setNumber', !TemplateVar.get('setNumber'));
+    }
 });
