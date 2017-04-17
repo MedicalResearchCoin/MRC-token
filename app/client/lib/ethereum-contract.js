@@ -20,7 +20,7 @@
 var guessnumberContract = web3.eth.contract([{"constant":false,"inputs":[{"name":"givenNumber","type":"uint8"}],"name":"setNumber","outputs":[],"type":"function"},{"constant":true,"inputs":[{"name":"givenNumber","type":"uint8"}],"name":"guessNumber","outputs":[{"name":"","type":"bool"}],"type":"function"},{"anonymous":false,"inputs":[{"indexed":false,"name":"from","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Deposit","type":"event"},{"anonymous":false,"inputs":[],"name":"SetNumber","type":"event"}]);
 
 // Deployed Contract address
-deployedContractAddress = '0x2ddc81699f60c59f6b5347f6d7cc84f882295ba7';
+deployedContractAddress = '0x094056aad033455265ae75d6ded81f236b06f64d';
 
 // Instance to be used by the Ðapp
 GuessNumberInstance = guessnumberContract.at(deployedContractAddress);
